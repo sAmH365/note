@@ -25,3 +25,33 @@
   * 원하는 항목만 보기
     * `docker ps --format 'table{{.Names}}\ttable{{.Image}}'`
       * \t: 탭간격 띄워서 출력
+### 도커 컨테이너 생명주기
+* 생성(`create`(이미지 생성)) -> 시작(`run`(이미지 실행),`start`(컨테이너 실행)) -> 실행(`run`) -> 중지(`stop`) -> 삭제(`rm`)
+  * `docker start -a <컨테이너id/이름>`
+    * -a옵션: 컨테이너가 실행될때 파일에서 나오는 아웃풋을 화면에 출력해줌
+  * `docker stop`, `docker kill`
+    * stop: gracefully 하게 중지
+    * kill: 기다리지 않고 바로 컨테이너 중지
+  * `docker rm <컨테이너id/이름>` : 컨테이너 삭제
+  * `docker rmi <이미지id>`: 이미지 삭제
+  * `docker system prune` : 한번에 컨테이너, 이미지, 네트워크 모두삭제
+    * 도커를 쓰지 않을때 모두 정리하고 싶을 때 사용해주면 좋음
+    * 실행중인 컨테이너에 영향을 주진 않음
+### 실행중인 컨테이너에 명령어 전달
+* `docker exec <컨테이너 아이디> <명령어>`
+### 레디스를 이용한 컨테이너 이해
+* 레디스 서버가 먼저 작동하고있어야함 ---> 그 후, 레디스 클라이언트 실행한 다음 명령어를 레디스 서버에 전달
+  * `redis-cli`: 레디스 클라이언트 ---(`set value1 hello`)--> `docker run redis` : 레디스 서버
+* 레디스 클라이언트도 컨테이너 안에서 실행 시켜야한다.
+  * `docker run redis`: 레디스 서버 작동
+  * `docker exec -it <컨테이너아이디> redis-cli`
+    * -it: 명령어를 실행 한 후 계속 명령어를 사용할수있게 해주는 옵션
+      * -i: interactive
+      * -t: terminal
+    * -it 없이 `docker exec <컨테이너아이디> redis-cli` 사용하면 redis-cli를 키기만 하고 밖으로 다시 나와버린다.
+    * 레디스 cli 예제 (`set key1 hello`, `get key1`)
+### 실행중인 컨테이너에서 터미널 사용
+* `docker exec -it <컨테이너id> 명령어`-> 이런식으로 명령어 하나 입력 할 때마다 모든것을 입력해줘야함
+* 이러한 문제점을 해결해주기 위해 컨테이너 안에 쉘이나 터미널 환경으로 접속필요함
+* `docker exec -it <컨테이너id> [sh,bash,zsh,powershell]`
+* 터미널 종료할땐 `Ctrl + D`

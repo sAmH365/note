@@ -39,5 +39,7 @@
         * 설정 > Docker Engine탭 > buildkit 값을 false로 변경
       * 설정을 완료하면 임시컨테이너 생성하는 스텝별로 출력됨
 ### 만든 이미지 이름 주기
-* `docker build -t npower5377/hello:latest`
-* `-t [나의 도커 아이디]/[저장소 or 프로젝트이름] : 버전`
+* `docker build -t samh273766/hello:latest`
+* `-t [도커 유저네임]/[저장소 or 프로젝트이름] : 버전`
+* 도커 허브에 푸시
+  * `docker push samh5370/hello-docker:latest`

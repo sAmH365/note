@@ -1,0 +1,8 @@
+version: "3"
+services: # 실행하려는 컨테이너들을 아래에 정의
+  redis-server: # 컨테이너 이름
+    image: "redis"  # 컨테이너에 사용하는 이미지
+  node-app: # 컨테이너 이름
+    build: . # 현 디렉토리에 있는 Dockerfile로 빌드
+    ports:
+      - "2266:3355"

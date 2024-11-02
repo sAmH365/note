@@ -137,3 +137,9 @@ public ItemWriter<ProcessedUser> userWriter() {
 * `chunk(10)` 으로 설정하면 10개의 아이템을 처리할 때마다 하나의 트랜잭션 생성
 * 청크가 완료될 때마다 커밋
 * 오류가 발생하면 해당 청크는 롤백되고 이후 배치 잡은 롤백된 청크부터 다시 시작
+
+# 참고사항
+* Reader를 사용할 때 순수 JPQL을 사용해야함
+* QueryDsl 사용하고 싶으면 -> QuerydslPagingItemReader
+* QuerydslNoOffsetPagingItemReader
+  * 읽기 시작한 부분을 지정해 매번 첫 페이지만 읽도록 하는 방식입니다. 이는 쿼리가 매번 이전 페이지의 행을 건너 뛸 수 있음을 의미합니다. 즉, 아무리 페이지가 뒤로 가더라도 처음 페이지를 읽은 것과 같은 효과를 가지게 됩니다. 

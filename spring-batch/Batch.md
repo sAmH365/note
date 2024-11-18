@@ -143,3 +143,6 @@ public ItemWriter<ProcessedUser> userWriter() {
 * QueryDsl 사용하고 싶으면 -> QuerydslPagingItemReader
 * QuerydslNoOffsetPagingItemReader
   * 읽기 시작한 부분을 지정해 매번 첫 페이지만 읽도록 하는 방식입니다. 이는 쿼리가 매번 이전 페이지의 행을 건너 뛸 수 있음을 의미합니다. 즉, 아무리 페이지가 뒤로 가더라도 처음 페이지를 읽은 것과 같은 효과를 가지게 됩니다. 
+
+# ItemReaderAdapter
+* SpringBatch에서 Job 안에 이미 있는 DAO나 다른 서비스를 ItemReader 안에서 사용하고자 할 때 위임 역할을 한다. Adapter 패턴을 도입하여 지정한 서비스를 호출하도록 한다.

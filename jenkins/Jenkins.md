@@ -14,3 +14,17 @@
   * Git Plugin => jenkins에서 git에 대한 소스코드를 긁어와서 빌드할 수 있도록 도와줌
   * Pipeline => 핵심 기능인 파이프라인마저도 플러그인이다.
   * Docker plugin and Docker Pipeline => Docker agent를 사용하고 jenkins에서 도커를 사용하기 위한 플러그인
+
+## Jenkins 설치 및 초기세팅
+### jenkins 설치
+```
+sudo apt-get update
+
+sudo apt install openjdk-8-jre -y
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
+
+sudo apt install jenkins -y
+```

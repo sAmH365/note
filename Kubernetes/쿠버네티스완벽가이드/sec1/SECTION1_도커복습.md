@@ -57,3 +57,39 @@ ENTRYPOINT ["./go-app"]
   * RUN이나 COPY등의 명령을 사용해 패키지 설치나 파일 복사등의 여러가지 처리 후 이미지 생성
 #### 멀티 스테이지 빌드
 * 여러 컨테이너 이미지를 사용하여 처리하고 결과물만 실행용 컨테이너 이미지에 복사하는 구조
+```docker
+# 멀티 스테이지 빌드 도커 파일 예제
+
+# Stage 1 컨테이너(애플리케이션 빌드)
+FROM golang:1.10.1-alpine3.7 as builder
+COPY ./main.go ./
+RUN go build -o /go-app ./main.go
+
+# Stage 2 컨테이너(빌드된 바이너리를 포함한 실행용 컨테이너 생성)
+FROM alpine:3.7
+EXPOSE 8080
+# Stage 1에서 빌드된 결과물을 복사
+COPY --from=builder /go-app .
+USER nobody
+ENTRYPOINT ["./go-app"]
+```
+* 1단계에서 Go언어로 작성된 애플리케이션 커파일
+* 2단계에서 다른 도커 이미지를 사용하여 컴파일하고 컴파일한 애플리케이션 바이너리를 1단계 컨테이너에서 복사해온다.
+* 예제는 2단계이지만, 3단계 이상 구성도 가능
+
+### 1.1.6 도커 레지스트리로 이미지 업로드
+* 도커 레지스트리
+  * 도커 이미지 보관하는 저장소
+  * 종류
+    * 도커 허브
+    * GCR (Google Container Registry)
+    * ECR (Amazon Elastic Container Registry)
+  * 보안검토
+    * 실제 서비흐 환경에서 사용할 경우 Trivy나 Clair같은 보안 스캔 도구의 사용도 검토
+  * 도커 레지스트리 푸시
+    * 이미지 빌드
+      * `도커허브사용자이름/sample-image:0.1`
+      * 이미지 태그 변경하고 싶을 경우
+        * `docker image tag sample-image:0.1 도커허브사용자이름/sample-image:0.1`
+    * 푸시
+      * `docker image push 도커허브사용자이름/sample-image:0.1`

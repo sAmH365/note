@@ -44,4 +44,63 @@
     * n은 2와 4 지정 가능
     * 2인 경우 70에서 69까지
     * 4인경우는 1970 에서 2069까지 표시
-# SQL로 테이블 CRUD 문법 이해하기
+# SQL로 테이블 조회/수정/삭제 문법 이해하기
+* 데이터 베이스 사용
+  * `use 테이블명`
+* 테이블 조회
+  * `show tables;`
+  * `desc mytable;`
+* 테이블 구조 수정
+  * 테이블 컬럼 추가
+    * `ALTER TABLE [테이블명] ADD COLUMN [추가할 컬럼명] [추가할 컬럼 데이터형]`
+      * `ALTER TABLE mytable ADD COLUMN col1 int not null`
+  * 테이블 컬럼 타입 변경
+    * `ALTER TABLE [테이블명] MODIFY COLUMN [변경할 컬럼명] [변경할 컬럼 타입]`
+      * `ALTER TABLE mytable MODIFIY COLUMN col1 varchar(20);`
+  * 테이블 컬럼 이름 변경
+    * `ALTER TABLE [테이블명] CHANGE COLUMN [기존 컬럼명] [변경할 컬럼명] [변경할 컬럼 타입]`
+      * `ALTER TABLE mytable CHANGE COLUMN col1 col2 varchar(50) not null;`
+  * 테이블 컬럼 삭제
+    * `ALTER TABLE [테이블명] DROP COLUMN [삭제할 컬럼명]`
+      * `ALTER TABLE mytable DROP COLUMN col1;`
+
+
+# 실습
+실습 - 테이블 생성, 조회 <br>
+다음과 같이 데이터베이스 및 테이블을 생성한 후, 연습문제를 풀어보세요.
+
+```sql
+mysql> CREATE DATABASE dave;
+mysql> USE dave;
+
+mysql> SHOW TABLES;
++----------------+
+| Tables_in_dave |
++----------------+
+| mytable        |
++----------------+
+
+mysql> desc mytable;<br>
+
++-------------+------------------+------+-----+---------+----------------+
+| Field       | Type             | Null | Key | Default | Extra          |
++-------------+------------------+------+-----+---------+----------------+
+| id          | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50)      | NO   |     | NULL    |                |
+| modelnumber | varchar(15)      | NO   |     | NULL    |                |
+| series      | varchar(30)      | NO   |     | NULL    |                |
++-------------+------------------+------+-----+---------+----------------+
+
+## 연습문제1: 다음과 같이 보이도록 테이블 컬럼을 수정하시오
+mysql> desc mytable;<br>
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int     unsigned | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)      | NO   |     | NULL    |                |
+| model_num  | varchar(10)      | NO   |     | NULL    |                |
+| model_type | varchar(10)      | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+
+## 연습문제2 - 위 테이블을 삭제한 후, 연습문제1과 같은 컬럼을 가진 테이블을 생성하시오 (테이블명은 model_info 로 하시오)
+```

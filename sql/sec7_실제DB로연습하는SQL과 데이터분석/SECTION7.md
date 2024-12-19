@@ -22,3 +22,20 @@
 
 #### 참고
 * 각 컬럼값 이해를 위한 배경 지식이 필요할 때가 있음(이것을 도메인이라고 이야기함)
+
+# SQL SELECT 문법4: SUM, AVG, MAX, MIN
+* 수치형 데이터에 한해서 유의미한 결과 출력 가능
+* 컬럼값 분석하기
+  * `SELECT SUM(컬럼명) FROM 테이블이름` (특정 컬럼에 들어가 있는 컬럼값의 합계 구하기)
+  * `SELECT AVG(컬럼명) FROM 테이블이름 WHERE 조건문` (특정 조건에 맞는, 특정 컬럼에 들어가 있는 컬럼값의 평균 구하기)
+
+#### 참고
+* 조회할때 단계별로 진행
+  1. 테이블 컬럼 확인하기
+  2. 테이블의 컬럼에서 필요한 정보 추출
+
+# SQL SELECT 문법5: GROUP BY
+* 특정 컬럼값을 기반으로 그룹핑하기
+  * `SELECT rating FROM film GROUP BY rating` : film테이블의 rating값을 그룹핑해라 -> rating값별로 출력하므로, rating값 종류를 확인할 수 있음
+  * `SELECT COUNT(*) FROM film GROUP BY rating` : 각 rating값 종류별로, 몇 개의 데이터가 있는지 확인
+  * `SELECT COUNT(*) FROM film WHERE 조건문 GROUP BY rating` : 특정 조건에 맞는 데이터중 rating 값 종류별로, 몇 개의 데이터가 있는지 확인

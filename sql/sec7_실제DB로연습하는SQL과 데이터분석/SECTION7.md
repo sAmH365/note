@@ -39,3 +39,17 @@
   * `SELECT rating FROM film GROUP BY rating` : film테이블의 rating값을 그룹핑해라 -> rating값별로 출력하므로, rating값 종류를 확인할 수 있음
   * `SELECT COUNT(*) FROM film GROUP BY rating` : 각 rating값 종류별로, 몇 개의 데이터가 있는지 확인
   * `SELECT COUNT(*) FROM film WHERE 조건문 GROUP BY rating` : 특정 조건에 맞는 데이터중 rating 값 종류별로, 몇 개의 데이터가 있는지 확인
+
+# SQL SELECT 문법6: ORDER BY
+* 특정 컬럼값을 기준으로 데이터 정렬
+  * `SELECT * FROM film ORDER BY rating DESC;`
+
+#### SQL 조건 순서
+1. WHERE
+2. GROUP BY
+3. ORDER BY
+4. LIMIT
+
+# SQL SELECT 문법7: AS
+* 표시할 컬럼명도 다르게 하기
+  * `SELECT COUNT(*) AS total FROM film`: (film의 전체 데이터 갯수를 COUNT(*) 로 표시하지 말고, total 로표시하기)

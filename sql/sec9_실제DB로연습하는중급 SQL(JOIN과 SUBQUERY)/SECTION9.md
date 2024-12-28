@@ -45,3 +45,57 @@ INNER JOIN ranking R ON I.item_code = R.item_code
 WHERE R.main_category = '화장품/헤어';
 ```
 </details>
+
+
+
+### OUTER JOIN 연습문제
+<details>
+<summary>연습문제</summary>
+
+```sql
+-- 연습문제
+-- sakila 데이터베이스에서 address 테이블에는 address_id 가 있지만, customer 테이블에는 없는 데이터의 갯수 출력하기
+SELECT COUNT(*)
+FROM address A 
+LEFT OUTER JOIN customer C 
+ON A.address_id = C.address_id
+WHERE C.address_id is null; 
+```
+</details>
+
+### SUBQUERY 이해
+* SQL문 안에 포함되어 있는 SQL문
+  * SQL문 안에서 괄호()를 사요해 서브쿼리문을 추가할 수 있음
+* 테이블과 테이블간의 검색시, 검색 범위(테이블 중 필요한 부분만 먼저 가져오도록)를 좁히는 기능에 주로 사용
+#### 서브쿼리 사용법
+* `JOIN`은 출력 결과에 여러 테이블의 열이 필요한 경우 유용
+* 대부분의 서브쿼리는 JOIN문으로 처리가 가능
+##### 예1: 서브쿼리 카테고리가 '여성신발'인 상품타이틀만 가져오기
+* bestproducts 테이블 사용
+* JOIN SQL 사용하는 방법
+* 서브쿼리를 사용해서 작성하는 방법
+
+##### 예2: 서브카테코리가 '여성신발'인 상품중 할인가격이 가장 높은 상품의 할인가격 가져오기
+* bestproducts 테이블 사용
+* JOIN SQL 사용하는 방법
+* 서브쿼리를 사용해서 작성하는 방법
+<details>
+<summary>sql</summary>
+
+```sql
+SELECT MAX(I.dis_price) FROM items I
+INNER JOIN ranking R 
+ON I.item_code = R.item_code
+WHERE R.sub_category = '여성신발'
+;
+
+SELECT MAX(I.dis_price) FROM items I
+WHERE I.item_code IN (
+	SELECT R.item_code
+	FROM ranking R
+    WHERE R.sub_category = '여성신발'
+);
+```
+</details>
+
+### 실제 문제 풀어보며 SUBQUERY 익숙해지기

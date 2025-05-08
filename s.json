@@ -1,0 +1,75 @@
+{
+    "timestamp": "2025-04-30 10:37:50.629",
+    "level": "ERROR",
+    "thread": "tomcat-handler-149",
+    "mdc": {
+        "traceId": "68117eedd4ed9d74d689f882db1be16c",
+        "spanId": "02061ece48591716",
+        "client": "mobile",
+        "user": "2025000002",
+        "did": "085e62999bcf6450",
+        "ip": "211.218.238.157"
+    },
+    "logger": "kr.co.mybrown.global.exception.GlobalExceptionHandler",
+    "message": "java.util.NoSuchElementException\n\tat java.base/java.util.ArrayList.getFirst(Unknown Source)\n\tat kr.co.mybrown.infrastructure.udada.product.repository.ProductRuleJpaCustomImpl.findProductRule(ProductRuleJpaCustomImpl.java:60)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)\n\tat kr.co.mybrown.infrastructure.udada.product.repository.ProductRuleJpaCustomImpl$$SpringCGLIB$$0.findProductRule(<generated>)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)\n\tat org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)\n\tat org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)\n\tat org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:173)\n\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)",
+    "context": "prod-udada-backend-64cb8f9778-99skb"
+}
+
+
+
+{
+    "timestamp": "2025-04-30 11:09:48.043",
+    "level": "ERROR",
+    "thread": "tomcat-handler-12",
+    "mdc": {
+        "traceId": "6811866a976fa34b86b06bbd749ee7bc",
+        "spanId": "90467884c5193721",
+        "client": "mobile",
+        "user": "2025000002",
+        "did": "085e62999bcf6450",
+        "ip": "211.218.238.157"
+    },
+    "logger": "kr.co.mybrown.global.exception.GlobalExceptionHandler",
+    "message": "java.util.NoSuchElementException\n\tat java.base/java.util.ArrayList.getFirst(Unknown Source)\n\tat kr.co.mybrown.infrastructure.udada.product.repository.ProductRuleJpaCustomImpl.findProductRule(ProductRuleJpaCustomImpl.java:60)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)\n\tat kr.co.mybrown.infrastructure.udada.product.repository.ProductRuleJpaCustomImpl$$SpringCGLIB$$0.findProductRule(<generated>)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)\n\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)\n\tat org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)\n\tat org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)\n\tat org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:173)\n\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)",
+    "context": "prod-udada-backend-6fd6dd75d4-8cwz5"
+}
+
+
+
+
+{
+    "timestamp": "2025-04-30 11:22:31.235",
+    "level": "ERROR",
+    "thread": "tomcat-handler-33",
+    "mdc": {
+        "traceId": "68118965274a9dd2480e89042bf91d9a",
+        "spanId": "4f88e927774ce3ab",
+        "client": "mobile",
+        "user": "2025000002",
+        "did": "085e62999bcf6450",
+        "ip": "211.218.238.157"
+    },
+    "logger": "kr.co.mybrown.global.exception.GlobalExceptionHandler",
+    "message": "java.lang.NullPointerException: Cannot invoke \"kr.co.mybrown.domain.product.entity.ProductInterestRate.getInterestRateItem()\" because \"productInterestRate\" is null\n\tat kr.co.mybrown.domain.quotation.QuotationServiceImpl.getInterestRateRule(QuotationServiceImpl.java:2702)\n\tat kr.co.mybrown.domain.quotation.QuotationServiceImpl.getDiscountRate(QuotationServiceImpl.java:1616)\n\tat kr.co.mybrown.domain.quotation.QuotationServiceImpl.discountPremium(QuotationServiceImpl.java:966)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)\n\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)\n\tat kr.co.mybrown.domain.quotation.QuotationServiceImpl$$SpringCGLIB$$0.discountPremium(<generated>)\n\tat kr.co.mybrown.application.quotation.QuotationFacade.calculateInsurancePremium(QuotationFacade.java:157)\n\tat kr.co.mybrown.interfaces.mobile.insurance.InsuranceQuotationController.calculateSimplePremium(InsuranceQuotationController.java:256)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)",
+    "context": "prod-udada-backend-6fd6dd75d4-8cwz5"
+}
+
+
+
+// FIDO에러
+{
+    "timestamp": "2025-04-30 14:20:03.125",
+    "level": "ERROR",
+    "thread": "tomcat-handler-222",
+    "mdc": {
+        "traceId": "6811b3034ef87fe201307c9b95c392b1",
+        "spanId": "ba0114e06d4b9e88",
+        "client": "admin",
+        "user": "240000",
+        "did": "MAIN64",
+        "ip": "192.168.1.21"
+    },
+    "logger": "kr.co.mybrown.domain.connector.scp.ScpInterface",
+    "message": "responseBody is empty",
+    "context": "prod-udada-backend-6fd6dd75d4-xzdkf"
+}

@@ -110,5 +110,6 @@ services:
   </details>
 
 * 카프카 스프링부트 실행 명령어 (LOG PATH환경변수 주입)
-  * `java -DLOG_FILE_PATH=/mnt/nas/before-filter -jar udada-logconsumer-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=production`
+  * `nohup java -DLOG_FILE_PATH=/mnt/nas/before-filter -jar udada-logconsumer-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=production &`
+  * `nohup java -DLOG_FILE_PATH=/mnt/nas/app/mybrown -jar udada-logconsumer-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=production &`
 

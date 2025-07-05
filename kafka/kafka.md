@@ -69,6 +69,14 @@ services:
   * 컨트롤러는 9093 포트를 사용해서 카프카 크러스터 관리
 </details>
 
+## 주키퍼 명령어
+* 주키퍼 시작하기
+  * bin/zookeeper-server-start.sh config/zookeeper.properties
+* 주키퍼 중지하기
+  * bin/zookeeper-server-stop.sh
+* 주키퍼 클러스터 모니터링
+  * bin/zookeeper-shell.sh <zookeeper-connect-string>
+
 ## 카프카 명령어
 * 토픽만들기
   * `kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092`

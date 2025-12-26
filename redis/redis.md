@@ -1,8 +1,12 @@
+# Redis
+
 * [redis 수업자료](https://picturesque-staircase-f6e.notion.site/redis-773bcaf9230047fdb12a874d216f1345)
+* 레디스는 싱글스레드 기반
+* 레디스를 구현한 라이브러리의 사용법을 실무에서는 사용하게 됨, 여기서는 이런 기능이 있구나 정도만
 
 <br>
 
-# 명령어
+## 명령어
 * 레디스는 16개의 DB를 가짐 (0 ~ 15)
   * select index
   * `select 3`
@@ -18,5 +22,19 @@
 * 삭제
   * `del user:email:3`
 
-# redis 활용 : 사용자 인증정보 저장(ex - refresh token)
+## redis 활용 : 사용자 인증정보 저장(ex - refresh token)
   * `set user:email:1 hong33@naver.com ex 10000` 
+## redis 활용 : 좋아요기능 구현
+* RDB에서 관리할 경우 동시성 이슈 발생 할 수도
+* `set likes:posting:1 0`
+* `incr likes:posting:1` -> 특정 key값의 value를 1만큼 증가
+* `decr likes:posting:1` -> 특정 key값의 value를 1만큼 감소 
+* `get likes:posting:1`
+
+## redis 활용 : 재고관리
+* `set stocks:product:1 100`
+* `decr stocks:product:1 100`
+* `get stocks:product:1`
+
+## redis 활용 : 캐시 기능 구현
+`set posting:1 "{\"title\": \"hello java\", \"contents\": \"hello java is ...\", \"author_email\": \"hong1@naver.com\"}" ex 1000`

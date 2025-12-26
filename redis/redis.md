@@ -3,14 +3,13 @@
 * [redis 수업자료](https://picturesque-staircase-f6e.notion.site/redis-773bcaf9230047fdb12a874d216f1345)
 * 레디스는 싱글스레드 기반
 * 레디스를 구현한 라이브러리의 사용법을 실무에서는 사용하게 됨, 여기서는 이런 기능이 있구나 정도만
-
-<br>
-
-## 명령어
 * 레디스는 16개의 DB를 가짐 (0 ~ 15)
   * select index
   * `select 3`
-* 일반적인 String 구조
+
+<br>
+
+# 일반적인 String 구조
 * set을 통해 key:value 세팅
   * `set user:email:1 hong1@naver.com`
 * db내 모든 키 조회
@@ -21,6 +20,8 @@
   * `set user:email:3 hong3@naver.com ex 10`
 * 삭제
   * `del user:email:3`
+<details>
+<summary>redis 활용</summary>
 
 ## redis 활용 : 사용자 인증정보 저장(ex - refresh token)
   * `set user:email:1 hong33@naver.com ex 10000` 
@@ -38,3 +39,50 @@
 
 ## redis 활용 : 캐시 기능 구현
 `set posting:1 "{\"title\": \"hello java\", \"contents\": \"hello java is ...\", \"author_email\": \"hong1@naver.com\"}" ex 1000`
+</details>
+
+<br>
+
+# LIST
+* deque 자료구조
+  * 맨 앞 or 맨 뒤 데이터 삽입 가능
+* 데이터 삽입
+  * 명령어
+    * lpush: 데이터를 왼쪽 끝에 삽입
+    * rpush: 데이터를 오른쪽 끝에 삽입
+    * lpop: 데이터를 왼쪽에서 꺼내기
+    * rpop: 데이터를 오른쪽에서 꺼내기
+    * `lpush honglist hong1`
+    * `lpush honglist hong2`
+    * `rpush honglist hong3`
+* list 조회
+  * -1 은 리스트의 끝자리를 의미, -2는 끝에서 2번째를 의미
+  * lrange: 데이터 구간 조회
+    * `lrange honglist 0 0` : 처음 값만 조회
+    * `lrange honglist -1 -1`: 마지막 값만 조회
+    * `lrange honglist 0 -1` : 처음부터 마지막 까지
+* 데이터 개수 조회
+  * `llen honglist`
+* ttl 적용
+  * `expire hongs 20`
+* ttl 조회
+  * `ttl hongs`
+<details>
+<summary>redis 활용</summary>
+
+## redis 활용 : 최근 방문한 페이지, 최근 조회한 상품목록
+  * `rpush mypages www.naver.com` 
+  * `rpush mypages www.google.com` 
+  * `rpush mypages www.daum.net` 
+  * `rpush mypages www.chatgpt.com` 
+  * 최근 방문한 페이지 3개만 보여주기
+    * `lrange mypages -3 -1`
+</details>
+
+<br>
+
+# SET
+
+# ZSET(정렬된 SET)
+
+# hashes

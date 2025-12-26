@@ -9,7 +9,7 @@
 
 <br>
 
-# 일반적인 String 구조
+# String 자료구조
 * set을 통해 key:value 세팅
   * `set user:email:1 hong1@naver.com`
 * db내 모든 키 조회
@@ -43,7 +43,7 @@
 
 <br>
 
-# LIST
+# LIST 자료구조
 * deque 자료구조
   * 맨 앞 or 맨 뒤 데이터 삽입 가능
 * 데이터 삽입
@@ -81,7 +81,34 @@
 
 <br>
 
-# SET
+# SET 자료구조
+* 중복없음, 순서없음
+* 데이터 삽입
+  * `sadd memberlist member1`
+  * `sadd memberlist member2`
+  * `sadd memberlist member1`
+* set 조회
+  * `smembers memberlist`
+* set 요소 개수 조회
+  * `scard memberlist`
+* set 요소 제거
+  * `srem memberlist member2`
+* 특정 요소가 set안에 들어있는지 확인
+  * `sismember memberlist member1`
+<details>
+<summary>redis 활용</summary>
+
+## redis 활용 : 좋아요 기능, 매일 방문자수 계산
+  * `sadd likes:posting:1 member1`
+  * `sadd likes:posting:1 member2`
+  * `sadd likes:posting:1 member1`
+  * 좋아요 개수
+    * `scard likes:posting:1`
+  * 좋아요 눌렀는지 안눌렀는지 확인
+    * `sismember likes:posting:1 member1`
+</details>
+
+<br>
 
 # ZSET(정렬된 SET)
 

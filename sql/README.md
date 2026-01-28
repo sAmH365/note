@@ -9,6 +9,7 @@ https://www.inflearn.com/courses/lecture?courseId=334916&type=LECTURE&unitId=243
 docker run \
   --name mysql-study \
   -p 3356:3306 \
+  -e TZ=Asia/Seoul \
   -e MYSQL_ROOT_PASSWORD=secret \
   -e MYSQL_USER=user1 \
   -e MYSQL_PASSWORD=pass \

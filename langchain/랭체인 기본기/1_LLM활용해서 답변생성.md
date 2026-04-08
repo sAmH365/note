@@ -22,3 +22,5 @@
         가상환경 밖으로 나가기: conda deactivate
         환경 삭제하기 (망했을 때): conda remove -n ai-agent --all
       ```
+# LangChain
+- [공식문서](https://reference.langchain.com/python/langchain-openai/chat_models/base/ChatOpenAI)
